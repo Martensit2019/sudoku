@@ -30,11 +30,11 @@ import type { IActionBtns } from '@/stores/types'
 const store = useSudokuStore()
 
 const actionBtns = reactive<IActionBtns[]>([
-  {
-    img: UndoSvg,
-    title: 'Отменить',
-    action: 'undo',
-  },
+  // {
+  //   img: UndoSvg,
+  //   title: 'Отменить',
+  //   action: 'undo',
+  // },
   {
     img: DeleteSvg,
     title: 'Очистить',
@@ -72,7 +72,8 @@ const handleClick = (actionBtn: IActionBtns) => {
   width: calc(var(--cell-size) * 9 + 20px);
   margin: 2vmin auto .5vmin;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(3, auto);
+  // grid-template-columns: repeat(4, auto);
   gap: var(--gap);
 
   &__btn {

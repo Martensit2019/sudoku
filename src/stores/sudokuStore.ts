@@ -17,7 +17,7 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
     isStart: true,
     hasBegun: false,
     boardSize: 9,
-    difficulty: {},
+    difficulty: () => {},
     isShowNotes: false,
     isPaused: false,
     mistakes: 0,
@@ -38,7 +38,7 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
       possibleCandidates.value = getPossibleCandidates(grid.value)
       controlValueBtns.value = actions.setControlValueBtns(grid.value, possibleCandidates.value)
       game.hasBegun = true
-      game.difficulty = difficulty
+      game.difficulty = difficulty as any
     }
   }
 
@@ -82,7 +82,7 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
 
   const setNotesCellGrid = () => {
     if (!game.isShowNotes || !grid.value.length || selectedCellIdx.value === null) return
-    if (selectedCell.value) grid.value[selectedCellIdx.value].notesGrid = actions.setNotesCellGrid(selectedCell.value)
+    if (selectedCell.value) grid.value[selectedCellIdx.value].notesGrid = actions.setNotesCellGrid(selectedCell.value) as any
   }
 
   const addMistake = () => {
@@ -121,7 +121,7 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
         grid.value = grid.value!.map((cell) => ({
           ...cell,
           notesGrid: Boolean(cell.isHighlighted && cell.notes.length) ? actions.updateNotesCellGrid(cell.notes, val!) : cell.notesGrid
-        }))
+        })) as any
       }
       if (grid.value.every((cell) => cell.value !== "" && cell.value === cell.expectedValue)) {
         game.results = "won"
@@ -139,7 +139,7 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
     const aa = stack.value.pop()
     // const aa = stack.value.pop()
     console.log(aa);
-    grid.value = JSON.parse(aa)
+    grid.value = JSON.parse(aa as any)
     
     
   }

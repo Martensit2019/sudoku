@@ -19,7 +19,9 @@ import { useSudokuStore } from '@/stores/sudokuStore.ts'
 import SudokuTimer from './SudokuTimer.vue'
 const store = useSudokuStore()
 
-const refSudokuTimer = ref<HTMLDivElement | null>(null)
+const refSudokuTimer = ref<any>(null)
+// const refSudokuTimer = ref<HTMLDivElement | null>(null)
+
 
 const resume = () => {
   if(refSudokuTimer.value === null) return  

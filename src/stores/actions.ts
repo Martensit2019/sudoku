@@ -113,7 +113,7 @@ const setNotesCellGrid = (selectedCell: ICell) => {
   }))
 }
 
-const updateNotesCellGrid = (notes, val) => {
+const updateNotesCellGrid = (notes: any, val: any) => {
   const initial = [
     {
       value: '1',

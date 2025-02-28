@@ -46,7 +46,7 @@ import SudokuModalWon from './SudokuModalWon.vue'
 import SudokuModalLost from './SudokuModalLost.vue'
 const store = useSudokuStore()
 
-const refSudokuInfo = ref<HTMLDivElement | null>(null)
+const refSudokuInfo = ref<any>(null)
 
 
 const boardSize = ref(9)
