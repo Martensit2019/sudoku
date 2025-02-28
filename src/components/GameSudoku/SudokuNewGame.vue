@@ -29,10 +29,10 @@ const store = useSudokuStore()
 const boardSize = ref(9)
 
 const difficultyBtns = [
-  { name: "Легкий", value: "easy", empty: 2 },
-  // { name: "Легкий", value: "easy", empty: 41 },
-  { name: "Средний", value: "medium", empty: 49 },
-  { name: "Сложный", value: "hard", empty: 57 },
+  // { name: "Легкий", value: "easy", empty: 2 },
+  { name: "Легкий", value: "easy", empty: 32 },
+  { name: "Средний", value: "medium", empty: 43 },
+  { name: "Сложный", value: "hard", empty: 54 },
   { name: "Эксперт", value: "expert", empty: 64 }
 ]
 </script>
