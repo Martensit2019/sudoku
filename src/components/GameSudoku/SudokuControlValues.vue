@@ -17,13 +17,6 @@ import SudokuBoard from '@/components/GameSudoku/SudokuBoard.vue'
 import { useSudokuStore } from '@/stores/sudokuStore.ts'
 
 const store = useSudokuStore()
-
-// const handleClick = (btn) => {
-//   console.log(btn)
-//   store.setCellValue(btn.title)
-// }
-
-
 </script>
 
 <style lang="scss" scoped>

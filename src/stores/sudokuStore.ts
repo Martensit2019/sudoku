@@ -1,4 +1,4 @@
-import { ref, computed, reactive, watch } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
 import actions from './actions'
 import { getPossibleCandidates } from './helpers'
@@ -86,7 +86,6 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
   }
 
   const addMistake = () => {
-    console.log('mistake', game.mistakes)
     if (game.mistakes < game.maxMistakes) game.mistakes++
     if (game.mistakes === game.maxMistakes) {
       game.results = "lost"
@@ -95,11 +94,9 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
 
 
   const setCellValue = (val: string | null) => {
-    console.log('setCellValue', val)
     if (!selectedCell.value || selectedCell.value?.isFilled || game.isPaused) return
     if (game.isShowNotes && val) {
       if (selectedCell.value.value) return
-      console.log('isShowNotes')
       setNotesCell(val)
       setNotesCellGrid()
     } else {
@@ -134,11 +131,8 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
   }
 
   const undo = () => {
-    console.log('undo', stack.value.length);
     stack.value.pop()
     const aa = stack.value.pop()
-    // const aa = stack.value.pop()
-    console.log(aa);
     grid.value = JSON.parse(aa as any)
     
     
@@ -159,14 +153,8 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
   const handleKeydown = (e: KeyboardEvent) => {
     if (!selectedCell.value || game.isPaused) return
     const { row, col, isFilled, expectedValue } = selectedCell.value
-    console.log('row==>', row)
-    console.log('col==>', col)
-
-    console.log('handleKeydown from store', e)
     const key = e.key
-    console.log('key', key, selectedCell.value)
     if (['ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft'].includes(key)) {
-      console.log('arrows', key)
       if (key === 'ArrowUp' && row !== 1) {
         grid.value = grid.value!.map((cell) => ({
           ...cell,
@@ -207,22 +195,6 @@ export const useSudokuStore = defineStore('sudoku-store', () => {
   const changeStatusNotes = (status: boolean) => {
     game.isShowNotes = status
   }
-
-  
-
-  // watch(
-  //   () => grid.value,
-  //   () => {
-  //     console.log('TTTTTTTTTTTTTT');
-  //     if (grid.value.length){
-  //       stack.value.push(JSON.stringify(grid.value))
-  //     }
-      
-  //     console.log('stack.value', stack.value);
-      
-  //   },
-  //   {deep: true}
-  // )
 
   return {
     grid,

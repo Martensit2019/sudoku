@@ -7,7 +7,6 @@ import type { ICell, IControlValueBtn } from '@/stores/types'
 // generateSudoku = (size = 9, difficulty = 30) ==================> удалить
 
 const createGrid = (size: number, difficulty: number) => {
-  console.log('startGameAction from ACT')
   const { startGrid, solvedGrid } = generateSudoku(size, difficulty)
   return solvedGrid.map((row, rowIdx) => {
     return row.map((col, colIdx) => {

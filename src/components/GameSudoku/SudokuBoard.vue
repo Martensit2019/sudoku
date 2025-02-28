@@ -31,7 +31,6 @@ const handleKeydown = (e: KeyboardEvent) => {
 }
 
 const onClick = () => {
-  console.log('onClick');
   emit('resume')
   
 }

@@ -40,9 +40,7 @@ interface IProps {
 const props = defineProps<IProps>()
 
 const handleClick = () => {
-  // console.log('handleClick', props.cell)
   store.setSelectedCell(props.cell)
-
 }
 
 </script>

@@ -55,7 +55,6 @@ const actionBtns = reactive<IActionBtns[]>([
 
 const handleClick = (actionBtn: IActionBtns) => {
   if(store.game.isPaused) return
-  console.log(actionBtn)
   if (actionBtn.action === 'undo') store.undo()
   if (actionBtn.action === 'clear') store.clearCellValue()
   if (actionBtn.action === 'note') {

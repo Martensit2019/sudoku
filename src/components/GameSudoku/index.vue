@@ -53,13 +53,8 @@ const boardSize = ref(9)
 const difficulty = ref(30)
 
 const resume = () => {
-  console.log('resume from index');
-  // console.log('refSudokuInfo.value', refSudokuInfo.value.resume);
-
-  if(refSudokuInfo.value === null) return
-  
-  refSudokuInfo.value.resume()
-  
+  if(refSudokuInfo.value === null) return  
+  refSudokuInfo.value.resume()  
 }
 
 </script>

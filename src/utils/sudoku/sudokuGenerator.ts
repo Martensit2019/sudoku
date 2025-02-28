@@ -36,8 +36,8 @@ const getRandomValuesSet = (size: number): string[] => {
  * @returns Заполненная сетка
  */
 const getInitialGrid = (grid: (null | string)[][], values: string[]): (null | string)[][] => {
-  console.log('grid', grid);
-  console.log('values', values);
+  // console.log('grid', grid);
+  // console.log('values', values);
   
   
   const size = grid.length
