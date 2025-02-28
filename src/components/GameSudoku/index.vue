@@ -15,16 +15,6 @@
     </div>
     <div v-else>
       <SudokuNewGame />
-      stack - {{ store.stack }}
-      <!-- <button class="btn" @click="store.startGame(boardSize, difficulty)">Новая игра</button><br /> -->
-      <!-- <button class="btn" @click="store.startOver">Ноча</button><br /> -->
-      <!-- store - {{ store.grid }}<br /><br /> -->
-      <!-- selectedCell - {{ store.selectedCell }}<br /> -->
-      <!-- selectedCellIdx - {{ store.selectedCellIdx }}<br /> -->
-      <!-- possibleCandidates - {{ store.possibleCandidates }}<br /> -->
-      <!-- controlValueBtns - {{ store.controlValueBtns }}<br /> -->
-      <!-- game - {{ store.game }}<br /> -->
-
     </div>
 
   </div>
