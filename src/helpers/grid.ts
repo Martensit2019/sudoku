@@ -1,0 +1,1 @@
+export const getCellBlock = (row: number, col: number) => Math.ceil(col / 3) + (Math.ceil(row / 3) - 1) * 3

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+// @import  'variables.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter","Helvetica Neue", sans-serif;
+}
+
+:root {
+  --color-primary: #5E24AE;
+  // var(--color-primary);
+--color-white: #fff;
+// var(--color-white);
+
+--bg-btn-hover: #8700FF;
+// var(--bg-btn-hover);
+
+--font-size-cell: 3vmin;
+// var(--font-size-cell);
+
+--font-size-btn: 4vmin;
+// var(--font-size-btn);
+
+// $cell-size: 67px;
+--cell-size: 7vmin;
+// var(--cell-size);
+
+// $gap: 5px;
+--gap: 0.5vmin;
+
+--font-size: 3vmin;
+// var(--font-size);
+
+}
